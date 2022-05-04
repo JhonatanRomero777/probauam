@@ -1,0 +1,26 @@
+[
+    {
+        "name":"Sexo",
+        "options": ["Masculino","Femenino","Otro"]
+    },
+    {
+        "name":"Estado Civil",
+        "options": ["Soltero","Casado","Divorciado","Viudo","Unión Libre"]
+    },
+    {
+        "name":"Nivel Educativo",
+        "options": ["Primaria Incompleta","Primaria Completa","Secundaria Incompleta","Secundaria Completa","Técnico","Tecnólogo","Pregrado","Posgrado"]
+    },
+    {
+        "name":"Tipo de documento",
+        "options": ["Cédula","Cédula de Extranjería","Pasaporte"]
+    },
+    {
+        "name":"Estrato Socioeconomico",
+        "options": ["1","2","3","4","5","6"]
+    },
+    {
+        "name":"Regimen de seguridad social",
+        "options": ["Contributivo","Subsidiado","Vinculado","Especial","ISSTE","IMSS","Otro","Ninguno"]
+    }
+]

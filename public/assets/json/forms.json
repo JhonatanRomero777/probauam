@@ -1,0 +1,1079 @@
+
+[   
+    {
+        "name":"TINETTI MARCHA",
+        "questions":
+        [
+            {
+                "name":"¿Profesional que realiza este cuestionario?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"¿Fecha en que se realiza este cuestionario?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Iniciación del paso (se le pide al paciente iniciar la marcha)",
+                "answers":
+                [
+                    {
+                        "name":"Comienza a caminar inmediatamente sin vacilación, con paso suave y fluido",
+                        "score":1
+                    },
+                    {
+                        "name":"Vacila, realiza múltiples intentos e inicia el paso con movimiento brusco",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Altura de paso (Se empieza a observar después de los primeros pasos, se mira un pie, luego el otro y después en vista lateral)",
+                "answers":
+                [
+                    {
+                        "name":"El pie se levanta completamente del piso, pero no más de siete (7) cms",
+                        "score":1
+                    },
+                    {
+                        "name":"El pie no se levanta completamente del piso (puede escucharse el roce del zapato), o se levanta más de siete (7) cms",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Longitud del paso (Se mira la distancia entre los dedos del pie apoyado y el talón del pie que se encuentra en fase de balanceo. Se observa en vista lateral)",
+                "answers":
+                [
+                    {
+                        "name":"La longitud del paso debe ser mínimo la longitud del pie, aunque puede ser mayor",
+                        "score":1
+                    },
+                    {
+                        "name":"La longitud del paso debe es menor que la longitud del pie",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Simetría del paso (No se tienen en cuenta los primeros ni los últimos pasos, sólo los intermedios. Se evalúa la vista lateral)",
+                "answers":
+                [
+                    {
+                        "name":"La longitud del paso es igual o similar en ambos pies durante la marcha",
+                        "score":1
+                    },
+                    {
+                        "name":"La longitud del paso varía de un pie a otro, o para cada paso el paciente avanza con el mismo pie",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Continuidad del paso",
+                "answers":
+                [
+                    {
+                        "name":"Mientras levanta el talón de un pie el talón del otro pie hace contacto con el piso, no interrumpe el paso y la longitud es igual durante los ciclos de la marcha",
+                        "score":1
+                    },
+                    {
+                        "name":"Hace apoyo completo de un pie talón-punta sobre el piso antes de levantar el otro pie, o para completamente antes de iniciar el siguiente paso, o la longitud de paso varía en cada ciclo de la marcha",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Dirección del camino (Se evalúa desde atrás, observando la dirección del pie después de varios pasos y la relación con respecto a una línea recta del piso )",
+                "answers":
+                [
+                    {
+                        "name":"Sigue en línea recta a medida que se desplaza",
+                        "score":1
+                    },
+                    {
+                        "name":"Se desvía de un lado a otro o hacia otra dirección",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Estabilidad del tronco (Se observa desde atrás. Movimientos del tronco de un lado a otro pueden ser normales, es necesario diferenciarlos de inestabilidad)",
+                "answers":
+                [
+                    {
+                        "name":"El tronco no se balancea, las rodillas o espalda no se flexionan, los brazos no se abducen como mecanismo compensatorio para mantener la estabilidad",
+                        "score":1
+                    },
+                    {
+                        "name":"Está presente cualquiera de las características referidas en el aspecto normal",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Base de sustentación durante la marcha (se evalúa desde atrás)",
+                "answers":
+                [
+                    {
+                        "name":"Los pies casi se tocan al dar el paso",
+                        "score":1
+                    },
+                    {
+                        "name":"Los pies están separados al dar el paso",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Girar mientras se camina",
+                "answers":
+                [
+                    {
+                        "name":"No se tambalea, no se detiene para hacer el giro, los pasos son continuos",
+                        "score":1
+                    },
+                    {
+                        "name":"Se tambalea, se detiene para iniciar el giro o los pasos son discontinuos",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Uso de tecnología de asistencia",
+                "answers":
+                [
+                    {
+                        "name":"SI",
+                        "score":0
+                    },
+                    {
+                        "name":"NO",
+                        "score":0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name":"TINETTI BALANCE",
+        "questions":
+        [
+            {
+                "name":"Balance en posición sedente en silla",
+                "answers":
+                [
+                    {
+                        "name":"Seguro Estable",
+                        "score":2
+                    },
+                    {
+                        "name":"Se agarra o se apoya en la silla para mantenerse erguido",
+                        "score":1
+                    },
+                    {
+                        "name":"Se desliza hacia abajo en la silla",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Incorporarse de una silla",
+                "answers":
+                [
+                    {
+                        "name":"Puede levantarse en un solo movimiento sin utilizar los brazos",
+                        "score":2
+                    },
+                    {
+                        "name":"Apoya los brazos para levantarse o moverse hacia adelante en la silla, antes de intentar la posición bípeda",
+                        "score":1
+                    },
+                    {
+                        "name":"Requiere muchos intentos o no es capaz de levantarse sin ayuda de otra persona",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Balance en el momento de adoptar la posición de pie (primeros 3-5 seg)",
+                "answers":
+                [
+                    {
+                        "name":"Seguro, sin agarrarse de ningún objeto que sirva de apoyo",
+                        "score":2
+                    },
+                    {
+                        "name":"Estable, pero usa caminador u otro objeto como medio de apoyo",
+                        "score":1
+                    },
+                    {
+                        "name":"Cualquier signo de inestabilidad",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Balance en posición de pie (después de 5 seg)",
+                "answers":
+                [
+                    {
+                        "name":"Seguro, puede sostenerse en posición bípeda con los pies juntos sin apoyarse",
+                        "score":2
+                    },
+                    {
+                        "name":"Estable, pero no puede colocar pies juntos",
+                        "score":1
+                    },
+                    {
+                        "name":"Algún signo de inestabilidad sin tener en cuenta la postura o apoyo en algún objeto",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Balance con ojos cerrados (pies tan juntos como pueda)",
+                "answers":
+                [
+                    {
+                        "name":"Seguro, sin apoyarse en ningún objeto",
+                        "score":2
+                    },
+                    {
+                        "name":"Seguro, pero con aumento en base de sustentación",
+                        "score":1
+                    },
+                    {
+                        "name":"Algún signo de inestabilidad o se apoya en algún objeto",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Balance al girar 360°",
+                "answers":
+                [
+                    {
+                        "name":"No tambalea, no necesita agarrarse y realiza el giro de forma fluida",
+                        "score":2
+                    },
+                    {
+                        "name":"Los pasos son discontinuos; apoya completamente un pie en el piso antes de levantar el otro",
+                        "score":1
+                    },
+                    {
+                        "name":"Algún signo de inestabilidad o se apoya en algún objeto",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Empujón sobre el esternón (Pies juntos tanto como pueda, suave presión en el esternón. Se observa la habilidad refleja para resistir el desplazamiento. Realizar un intento)",
+                "answers":
+                [
+                    {
+                        "name":"Firme, es capaz de resistir la presión",
+                        "score":2
+                    },
+                    {
+                        "name":"Necesita mover los pies para mantener el balance",
+                        "score":1
+                    },
+                    {
+                        "name":"Puede caer o requiere ayuda para mantener el balance",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Balance en un pie (Se evita en caso de inestabilidad en balance en posición de pie)",
+                "answers":
+                [
+                    {
+                        "name":"Puede permanecer en posición bípeda, apoyado en un solo pie, durante 5 seg",
+                        "score":2
+                    },
+                    {
+                        "name":" ",
+                        "score":1
+                    },
+                    {
+                        "name":"No puede adoptar la posición",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Extensión de espalda (tanto como sea posible sin apoyarse en un objeto)",
+                "answers":
+                [
+                    {
+                        "name":"Realiza buena extensión sin apoyo y sin tambalearse",
+                        "score":2
+                    },
+                    {
+                        "name":"Intenta realizar la acción, pero presenta disminución en la movilidad o necesita un objeto como apoyo",
+                        "score":1
+                    },
+                    {
+                        "name":"No lo intenta, no extiende la espalda o se tambalea",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Alcanzar un objeto alto (aunque requiera empinarse)",
+                "answers":
+                [
+                    {
+                        "name":"Puede tomar el objeto sin apoyarse y sin desestabilizar su posición",
+                        "score":2
+                    },
+                    {
+                        "name":"Puede tomar el objeto, pero necesita alguna ayuda de un aditamento para sentirse seguro",
+                        "score":1
+                    },
+                    {
+                        "name":"No lo logra",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Agacharse a recoger un objeto del piso",
+                "answers":
+                [
+                    {
+                        "name":"Es hábil para agacharse y tomarlo; regresa a la posición inicial en un solo intento, sin necesidad de impulsarse con los brazos",
+                        "score":2
+                    },
+                    {
+                        "name":"Puede tomar el objeto en un solo intento, pero necesita apoyo",
+                        "score":1
+                    },
+                    {
+                        "name":"No puede agacharse o levantarse a pesar de muchos intentos",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Sentarse en una silla",
+                "answers":
+                [
+                    {
+                        "name":"Realiza la acción con un movimiento suave",
+                        "score":2
+                    },
+                    {
+                        "name":"Necesita usar los brazos para acomodarse en la silla o el movimiento es brusco",
+                        "score":1
+                    },
+                    {
+                        "name":"Cae en la silla; calcula mal las distancias. No cae en el centro",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Uso de tecnología de asistencia",
+                "answers":
+                [
+                    {
+                        "name":"SI",
+                        "score":0
+                    },
+                    {
+                        "name":"NO",
+                        "score":0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name":"SPPB",
+        "questions":
+        [
+            {
+                "name":"P1",
+                "answers":
+                [
+                    {
+                        "name":"R1",
+                        "score":0
+                    },
+                    {
+                        "name":"R2",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Uso de tecnología de asistencia",
+                "answers":
+                [
+                    {
+                        "name":"SI",
+                        "score":0
+                    },
+                    {
+                        "name":"NO",
+                        "score":0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name":"MINI EXAMEN DEL ESTADO MENTAL (MMSE)",
+        "questions":
+        [
+            {
+                "name":"ORIENTACIÓN TEMPORAL : ¿En qué año estamos?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"ORIENTACIÓN TEMPORAL : ¿En qué época estamos?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"ORIENTACIÓN TEMPORAL : ¿En qué mes estamos?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"ORIENTACIÓN TEMPORAL : ¿En qué día del mes estamos?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"ORIENTACIÓN TEMPORAL : ¿En qué día de la semana estamos?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"ORIENTACIÓN ESPACIAL : ¿En qué lugar estamos?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"ORIENTACIÓN ESPACIAL : ¿En qué piso estamos?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"ORIENTACIÓN ESPACIAL : ¿En qué ciudad estamos?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"ORIENTACIÓN ESPACIAL : ¿En qué departamento estamos?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"ORIENTACIÓN ESPACIAL : ¿En qué país estamos?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"FIJACIÓN DEL RECUERDO : Nombre tres palabras (pelota - caballo - manzana) a razón de 1 por segundo. Luego se pide al paciente que las repita. Esta primera repetición otorga la puntuación. Otorgue 1 punto por cada palabra correcta, pero continúe diciéndolas hasta que el sujeto repita las 3, hasta un máximo de 6 veces. ¿Repitió correctamente pelota?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"FIJACIÓN DEL RECUERDO : Nombre tres palabras (pelota - caballo - manzana) a razón de 1 por segundo. Luego se pide al paciente que las repita. Esta primera repetición otorga la puntuación. Otorgue 1 punto por cada palabra correcta, pero continúe diciéndolas hasta que el sujeto repita las 3, hasta un máximo de 6 veces. ¿Repitió correctamente caballo?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"FIJACIÓN DEL RECUERDO : Nombre tres palabras (pelota - caballo - manzana) a razón de 1 por segundo. Luego se pide al paciente que las repita. Esta primera repetición otorga la puntuación. Otorgue 1 punto por cada palabra correcta, pero continúe diciéndolas hasta que el sujeto repita las 3, hasta un máximo de 6 veces. ¿Repitió correctamente manzana?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"ATENCIÓN - CÁLCULO : Si tiene 30 pesos y me va dando de tres en tres, ¿Cuántos le van quedando?. ¿Inicia correctamente diciendo 30 pesos?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"ATENCIÓN - CÁLCULO : Si tiene 30 pesos y me va dando de tres en tres, ¿Cuántos le van quedando?. ¿Resta correctamente diciendo 27 pesos?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"ATENCIÓN - CÁLCULO : Si tiene 30 pesos y me va dando de tres en tres, ¿Cuántos le van quedando?. ¿Resta correctamente diciendo 24 pesos?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"ATENCIÓN - CÁLCULO : Si tiene 30 pesos y me va dando de tres en tres, ¿Cuántos le van quedando?. ¿Resta correctamente diciendo 21 pesos?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"ATENCIÓN - CÁLCULO : Si tiene 30 pesos y me va dando de tres en tres, ¿Cuántos le van quedando?. ¿Resta correctamente diciendo 18 pesos?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"RECUERDO DIFERIDO : Preguntar por las tres palabras mencionadas anteriormente. ¿Recordó correctamente pelota?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"RECUERDO DIFERIDO : Preguntar por las tres palabras mencionadas anteriormente. ¿Recordó correctamente caballo?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"RECUERDO DIFERIDO : Preguntar por las tres palabras mencionadas anteriormente. ¿Recordó correctamente manzana?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"LENGUAJE - DENOMINACIÓN : Mostrarle un lápiz o un bolígrafo y preguntar ¿qué es esto?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"LENGUAJE - DENOMINACIÓN : Mostrarle un reloj de pulsera y preguntar ¿qué es esto?",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"LENGUAJE - REPETICIÓN : Pedirle que repita la frase: - en un trigal había 5 perros -",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"LENGUAJE - ÓRDENES : Pedirle que siga la orden: - Agarra un papel con la mano derecha -",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"LENGUAJE - ÓRDENES : Pedirle que siga la orden: - Dobla el papel por la mitad -",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"LENGUAJE - ÓRDENES : Pedirle que siga la orden: - Ponga el papel en el suelo -",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"LENGUAJE - LECTURA : Escriba legiblemente en un papel - cierre los ojos -. Pídale que lo lea y haga lo que dice la frase",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"LENGUAJE - ESCRITURA : Pedir que escriba una frase (con sujeto y predicado)",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"LENGUAJE - COPIA : Dibuje 2 pentágonos intersectados y pida al sujeto que los copie tal cual. Para otorgar un punto deben estar presentes los 10 ángulos y la intersección",
+                "answers":
+                [
+                    {
+                        "name":"",
+                        "score":1
+                    },
+                    {
+                        "name":"",
+                        "score":0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name":"VELOCIDAD DE LA MARCHA",
+        "questions":
+        [
+            {
+                "name":"Se le pide al paciente caminar 6 metros. ¿Requiere ayuda para realizar la tarea?",
+                "answers":
+                [
+                    {
+                        "name":"No requiere ayuda",
+                        "score":0
+                    },
+                    {
+                        "name":" Requiere ayuda (caminador, muleta, bastón)",
+                        "score":1
+                    },
+                    {
+                        "name":"Requiere ayuda de una persona (con o sin el ítem anterior)",
+                        "score":1
+                    },
+                    {
+                        "name":"Requiere una persona ofreciendo las manos (con o sin ayuda)",
+                        "score":1
+                    },
+                    {
+                        "name":"Requiere la asistencia de dos personas",
+                        "score":1
+                    },
+                    {
+                        "name":"En silla (Si está en silla y se moviliza, se considera con ayuda)",
+                        "score":1
+                    }
+                ]
+            },
+            {
+                "name":"Se le pide al paciente caminar 6 metros. ¿Recorrió los 6 metros completamente?",
+                "answers":
+                [
+                    {
+                        "name":"SI",
+                        "score":0
+                    },
+                    {
+                        "name":"NO",
+                        "score":1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name":"TIMED UP AND GO",
+        "questions":
+        [
+            {
+                "name":"P1",
+                "answers":
+                [
+                    {
+                        "name":"R1",
+                        "score":0
+                    },
+                    {
+                        "name":"R2",
+                        "score":0
+                    }
+                ]
+            },
+            {
+                "name":"Uso de tecnología de asistencia",
+                "answers":
+                [
+                    {
+                        "name":"SI",
+                        "score":0
+                    },
+                    {
+                        "name":"NO",
+                        "score":0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name":"ALCANCE FUNCIONAL",
+        "questions":
+        [
+            {
+                "name":"Mide los límites de estabilidad y el control postural dinámico. Antes de iniciar la prueba es necesario fijar el metro a la pared, a la altura del hombro del anciano y en sentido horizontal. Se le pide que estire el brazo dominante hacia adelante (no arriba), tanto como pueda con el puño cerrado y sin mover los pies. Si la persona mueve los pies o intenta dar un paso, la prueba se descarta y se hace de nuevo, se realizan dos intentos y se registran. La medida se toma teniendo en cuenta los nudillos o articulación carpometacarpiana y no las interfalángicas. Se registra el mejor intento",
+                "answers":
+                [
+                ]
+            },
+            {
+                "name":"Mide los límites de estabilidad y el control postural dinámico. Antes de iniciar la prueba es necesario fijar el metro a la pared, a la altura del hombro del anciano y en sentido horizontal. Se le pide que estire el brazo dominante hacia adelante (no arriba), tanto como pueda con el puño cerrado y sin mover los pies. Si la persona mueve los pies o intenta dar un paso, la prueba se descarta y se hace de nuevo, se realizan dos intentos y se registran. La medida se toma teniendo en cuenta los nudillos o articulación carpometacarpiana y no las interfalángicas. Se registra el mejor intento",
+                "answers":
+                [
+                ]
+            }
+        ]
+    },
+    {
+        "name":"PROPUESTA DE ESCALA DE RIESGO A CAÍDAS DE DOWNTOWN",
+        "questions":
+        [
+            {
+                "name":"CAÍDAS PREVIAS",
+                "answers":
+                [
+                    {
+                        "name":"NO",
+                        "score":0
+                    },
+                    {
+                        "name":"SI",
+                        "score":1
+                    }
+                ]
+            },
+            {
+                "name":"MEDICAMENTOS",
+                "answers":
+                [
+                    {
+                        "name":"NINGUNO",
+                        "score":0
+                    },
+                    {
+                        "name":"TRANQUILIZANTES O SEDANTES",
+                        "score":1
+                    },
+                    {
+                        "name":"DIURÉTICOS",
+                        "score":1
+                    },
+                    {
+                        "name":"HIPOTENSORES (NO DIURÉTICOS)",
+                        "score":1
+                    },
+                    {
+                        "name":"ANTIPARKINSONIANOS",
+                        "score":1
+                    },
+                    {
+                        "name":"ANTIDEPRESIVOS",
+                        "score":1
+                    },
+                    {
+                        "name":"OTROS MEDICAMENTOS",
+                        "score":1
+                    }
+                ]
+            },
+            {
+                "name":"DEFICIENCIAS SENSORIALES",
+                "answers":
+                [
+                    {
+                        "name":"NINGUNA",
+                        "score":0
+                    },
+                    {
+                        "name":"ALTERACIONES VISUALES",
+                        "score":1
+                    },
+                    {
+                        "name":"ALTERACIONES AUDITIVAS",
+                        "score":1
+                    },
+                    {
+                        "name":"EXTREMIDADES (ICTUS,ETC)",
+                        "score":1
+                    }
+                ]
+            },
+            {
+                "name":"ESTADO MENTAL",
+                "answers":
+                [
+                    {
+                        "name":"ORIENTADO",
+                        "score":0
+                    },
+                    {
+                        "name":"CONFUSO",
+                        "score":1
+                    }
+                ]
+            },
+            {
+                "name":"MARCHA",
+                "answers":
+                [
+                    {
+                        "name":"NORMAL",
+                        "score":0
+                    },
+                    {
+                        "name":"SEGURA CON AYUDA",
+                        "score":0
+                    },
+                    {
+                        "name":"INSEGURA CON/SIN AYUDA",
+                        "score":1
+                    },
+                    {
+                        "name":"IMPOSIBLE",
+                        "score":1
+                    }
+                ]
+            }
+        ]
+    }
+]

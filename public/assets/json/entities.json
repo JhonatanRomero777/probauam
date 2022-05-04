@@ -1,0 +1,65 @@
+[
+    {
+        "name":"S.E.S. Hospital Del Caldas",
+        "nit": "1000000001",
+        "phone": "(606)8782500",
+        "direction": "Cll. 48 # 25-71",
+        "city_id": "336"
+    },
+    {
+        "name":"Caja De Compensacion Familiar De Caldas - Clinica San Marcel",
+        "nit": "1000000002",
+        "phone": "(606)8748680",
+        "direction": "Av. Alberto Mendoza # 93-25",
+        "city_id": "336"
+    },
+    {
+        "name":"Hospital Infantil Universitario De La Cruz Roja",
+        "nit": "1000000003",
+        "phone": "(606)8810023",
+        "direction": "Cra. 23 # 49-30",
+        "city_id": "336"    
+    },
+    {
+        "name":"Hospital Departamental Santa Sofia",
+        "nit": "1000000004",
+        "phone": "(606)8879200",
+        "direction": "Km. 2 Salida A Chinchina",
+        "city_id": "336"
+    },
+    {
+        "name":"Clinica Santillana",
+        "nit": "1000000005",
+        "phone": "(606)881111100",
+        "direction": "Cra. 24 # 56- 50",
+        "city_id": "336"
+    },
+    {
+        "name":"Clinica De La Presentacion",
+        "nit": "1000000006",
+        "phone": "(606)8782800",
+        "direction": "Cra. 23 # 46- Esquina",
+        "city_id": "336"
+    },
+    {
+        "name":"Confamiliares Caldas",
+        "nit": "1000000007",
+        "phone": "(606)8783111",
+        "direction": "Cra. 25 Cll. 50 Esquina",
+        "city_id": "336"
+    },
+    {
+        "name":"Centro Medico Angel Ltda.",
+        "nit": "1000000008",
+        "phone": "(606)8855525",
+        "direction": "Cra. 23 # 62-05",
+        "city_id": "336"
+    },
+    {
+        "name":"Clinica Versalles S.a.",
+        "nit": "1000000009",
+        "phone": "(606)8879100",
+        "direction": "Cll. 51 # 24-50",
+        "city_id": "336"
+    }
+]
