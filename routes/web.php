@@ -33,12 +33,18 @@ Route::get('/parameters/index',function(){return view('pages/parameters.index');
 /*---------------------------------------- ENTITIES -----------------------------------------*/
 
 Route::get('/entities/index',function(){return view('pages/entities.index');})
-->middleware('can:entities.index')->name('entities.index');
+->middleware('auth')->middleware('can:entities.index')->name('entities.index');
 
 /*---------------------------------------- PROFESSIONALS ------------------------------------*/
 
 Route::get('/professionals/index',function(){return view('pages/professionals.index');})
 ->middleware('can:professionals.index')->name('professionals.index');
+
+/*---------------------------------------- CONTRACTS ------------------------------------*/
+
+Route::get('/contracts/index/{entity_id}',function($entity_id)
+{return view('pages/contracts.index',['entity_id'=>$entity_id]);})
+->middleware('auth')->middleware('can:contracts.index')->name('contracts.index');
 
 /*---------------------------------------- PATIENTS -----------------------------------------*/
 

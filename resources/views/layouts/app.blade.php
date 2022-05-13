@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+  
   <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
 
   @livewireStyles()
@@ -114,23 +114,18 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script>
-    window.addEventListener('success',() =>{
-      Swal.fire({
-        icon: 'success',
-        title: 'Acción Exitosa',
-        showConfirmButton: false,
-        timer: 1000,
-      })
-    });
+    // window.addEventListener('success',() =>{
+    //   Swal.fire({
+    //     icon: 'success',
+    //     title: 'Acción Exitosa',
+    //     showConfirmButton: false,
+    //     timer: 1000,
+    //   })
+    // });
 
-    window.addEventListener('repeat',() =>{
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Registro ya existente'
-      })
-    });
-    //////////////////////////////////////
+    // window.addEventListener('send', event => {
+    //   Livewire.emitTo(event.detail.page,event.detail.function,event.detail.data);
+    // });
 
     Livewire.on('success',() =>{
       Swal.fire({
@@ -138,14 +133,6 @@
         title: 'Acción Exitosa',
         showConfirmButton: false,
         timer: 1000,
-      })
-    });
-
-    Livewire.on('repeat', data =>{
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: data + ' ya existente'
       })
     });
 
@@ -174,12 +161,6 @@
     Livewire.on('close-modal', name => {  
       $(name).modal('hide');
     });
-
-    // ***************************** //
-    window.addEventListener('send', event => {
-      Livewire.emitTo(event.detail.page,event.detail.function,event.detail.data);
-    });
-    // ***************************** //
 
   </script>
   

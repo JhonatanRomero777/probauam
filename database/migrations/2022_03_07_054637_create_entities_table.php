@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name',60);
             $table->string('direction',60);
-            $table->string('nit',10)->unique();
+            //$table->string('nit',10)->unique();
+            $table->string('nit',10);
             $table->string('phone',20);
             $table->foreignId('city_id');
             $table->timestamps();

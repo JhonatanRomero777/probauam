@@ -22,4 +22,9 @@ class Entity extends Model
     {
         return $this->belongsTo(City::class);
     }
+
+    public function contracts()
+    {
+        return $this->hasMany(Contract::class);
+    }
 }

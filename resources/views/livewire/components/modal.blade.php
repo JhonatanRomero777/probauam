@@ -5,13 +5,7 @@
       
       <div class="modal-content">
     
-        <div class="modal-header shadow-blue">
-          <h1 class="modal-title w-100 text-center">{{$title}}</h1>
-        </div>
-    
-        <div class="modal-body">
-          @livewire($component)
-        </div>
+        @livewire($component)
     
       </div>
     </div>

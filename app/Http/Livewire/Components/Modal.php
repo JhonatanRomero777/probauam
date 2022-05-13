@@ -6,10 +6,9 @@ use Livewire\Component;
 
 class Modal extends Component
 {
-    public function mount($id_modal , $title , $component)
+    public function mount($id_modal , $component)
     {
         $this->id_modal = $id_modal;
-        $this->title = $title;
         $this->component = $component;
     }
 

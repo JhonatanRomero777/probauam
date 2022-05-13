@@ -8,15 +8,14 @@ use App\Models\Entity;
 
 use Livewire\Component;
 
-class Create extends Component
+class Update extends Component
 {
     protected $rules =
     [
         'entity.name' => ['required','regex:/[a-zA-Z0-9\s]+/','max:60'],
         'entity.nit' => ['required','integer','digits_between:10,10'],
         'entity.phone' => ['required','max:20'],
-        'entity.direction' => ['required','max:60'],
-        'entity.city_id' => ['required']
+        'entity.direction' => ['required','max:60']
     ];
 
     protected $messages = 
@@ -33,11 +32,10 @@ class Create extends Component
         'entity.direction.max' => 'Máximo 60 caracteres',
     ];
 
-    protected $listeners = ['create'];
+    protected $listeners = ['update'];
 
     public function mount()
     {
-        $this->tag = false;
         $this->entity = new Entity;
         $this->entity->city_id = Country::first()->departments->first()->cities->first()->id;
     }
@@ -55,7 +53,7 @@ class Create extends Component
         $this->entity->nit = trim($this->entity->nit);
         $this->validateOnly('entity.nit');
 
-        if(Entity::where('nit','=',$this->entity->nit)->get()->count())
+        if(Entity::where('nit','=',$this->entity->nit)->where('id','!=',$this->entity->id)->get()->count())
         { $this->addError('entity.nit', 'NIT ya registrado'); }
     }
 
@@ -73,29 +71,28 @@ class Create extends Component
         $this->validateOnly('entity.direction');
     }
 
-    public function create(City $city)
-    {
-        $this->entity = new Entity;
-        $this->entity->city_id = $city->id;
+    public function update(Entity $entity)
+    {   
+        $this->entity = $entity;
         $this->resetValidation();
-        $this->emit('open-modal','#modal-entity-create');
+        $this->emit('open-modal','#modal-entity-update');
     }
 
     public function save()
     {
         $this->validate();
-        
-        if(Entity::where('nit','=',$this->entity->nit)->get()->count())
-        { $this->addError('entity.nit', 'NIT ya registrado'); return; }
 
+        if(Entity::where('nit','=',$this->entity->nit)->where('id','!=',$this->entity->id)->get()->count())
+        { $this->addError('entity.nit', 'NIT ya registrado'); return; }
+        
         $this->entity->save();
-        $this->emitTo('entities.index','changeCity',$this->entity->city_id);
-        $this->emit('close-modal','#modal-entity-create');
+        $this->emitTo('entities.index','render');
+        $this->emit('close-modal','#modal-entity-update');
         $this->emit('success');
     }
 
     public function render()
     {
-        return view('livewire.entities.create');
+        return view('livewire.entities.update');
     }
 }

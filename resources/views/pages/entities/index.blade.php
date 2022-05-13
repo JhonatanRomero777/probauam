@@ -10,7 +10,19 @@
   </div>
   
   <div class="content">
-    @livewire('entities.index')
+
+    @livewire('components.modal',["id_modal"=>'modal-entity-create' , "component"=>'entities.create'])
+
+    @livewire('components.modal',["id_modal"=>'modal-entity-update' , "component"=>'entities.update'])
+
+    <div class="row">
+      <div class="col-md-12">
+        @livewire('entities.search')
+
+        @livewire('entities.index')
+      </div>
+    </div>
+    
   </div>
   
 @endsection

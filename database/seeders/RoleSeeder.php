@@ -27,5 +27,6 @@ class RoleSeeder extends Seeder
         Permission::create(['name'=>'parameters.index'])->assignRole($role1);
         Permission::create(['name'=>'entities.index'])->assignRole($role1);
         Permission::create(['name'=>'professionals.index'])->assignRole($role1);
+        Permission::create(['name'=>'contracts.index'])->assignRole($role1);
     }
 }

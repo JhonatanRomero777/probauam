@@ -48,10 +48,10 @@
       
         <div class="modal_botones">
           <button wire:click="save" class="btn btn-primary btn-round">
-            CREAR <i class="bi bi-pencil-square fa-lg"></i>
+            ACTUALIZAR <i class="bi bi-pencil-square fa-lg"></i>
           </button>
       
-          <button wire:click="$emit('close-modal','#modal-entity-create')" class="btn btn-light btn-round">
+          <button wire:click="$emit('close-modal','#modal-entity-update')" class="btn btn-light btn-round">
             CANCELAR <i class="bi bi-x-circle fa-lg"></i>
           </button>
         </div>
