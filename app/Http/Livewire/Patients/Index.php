@@ -13,32 +13,17 @@ class Index extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    public String $search = "";
-
+    protected $listeners = ['delete' , 'render'];
+    
     public function mount()
     {
-        $this->modals =
-        [
-            [ 'id'=>'modal-create1' , 'title'=>'USUARIO' , 'component'=>'patients.create1' ],
-            [ 'id'=>'modal-create2' , 'title'=>'USUARIO' , 'component'=>'patients.create2' ]
-        ];        
+        $this->search = "";
+        $this->resetPage();
     }
-
-    protected $listeners = ['delete' , 'render'];
 
     public function updatingSearch()
     {
         $this->resetPage();
-    }
-
-    public function create()
-    {
-        $this->emitTo('patients.create1','create');
-    }
-
-    public function edit(Patient $patient)
-    {
-        $this->emitTo('patients.create1','edit',$patient);
     }
 
     public function delete(Patient $patient)

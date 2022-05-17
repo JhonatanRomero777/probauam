@@ -4,15 +4,28 @@
 
     <div class="card-body">
       <div class="row">
-        <div class="col-md-6"> 
-          <div class="input-group" style="padding-top: 10px">
-            <input class="form-control" wire:model="search" style="text-align:center;font-size:15px" placeholder="Búsqueda por Documento o Número de Tarjeta Profesional">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <i class="bi bi-search fa-lg" style="color:black"></i>
+
+        <div class="col-md-6">
+
+          <div class="row">
+            <div class="col-md-9">
+              <div class="input-group" style="padding-top: 10px">
+                <input class="form-control" wire:model="search" style="text-align:center;font-size:15px" placeholder="Buscar por Documento o Tarjeta Profesional">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="bi bi-search fa-lg" style="color:black"></i>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <div class="col-md-3">
+              <button class="btn btn-primary btn-round" wire:click="$emitTo('professionals.create','create')">
+                CREAR <i class="bi bi-plus-circle fa-lg"></i>
+              </button>
+            </div>
           </div>
+
         </div>
 
         <div class="col-md-6" style="padding-top: 12px">
@@ -20,6 +33,7 @@
             {{$professionals->links()}}
           @endif
         </div>
+
       </div>
 
     </div>
@@ -34,9 +48,9 @@
         <div class="col-md-6">
           <div class="card-border">
 
-            <div class="card-header text-center shadow-blue">
-              <h6>{{$current_professional->names}} {{$current_professional->last_names}}</h6>
-            </div>    
+            <div class="card-header text-center shadow-blue" style="height: 60px">
+              <div style="height: 100%"> <h6>{{$current_professional->names}} {{$current_professional->last_names}}</h6> </div>
+            </div> 
 
             <div class="card-body shadow-orange">
 
@@ -84,7 +98,7 @@
             </div>
 
             <div class="card-footer text-center shadow-blue">
-              <button wire:click="edit({{$current_professional}})" class="btn btn-warning btn-round">
+              <button wire:click="$emitTo('professionals.update','update',{{$current_professional}})" class="btn btn-warning btn-round">
                 EDITAR <i class="bi bi-pencil-square fa-lg"></i>
               </button>
               <button wire:click="$emit('remove',['professionals.index',{{$current_professional}}])" class="btn btn-danger btn-round">

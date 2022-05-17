@@ -27,4 +27,9 @@ class Entity extends Model
     {
         return $this->hasMany(Contract::class);
     }
+
+    public function patients()
+    {
+        return $this->hasMany(Patient::class);
+    }
 }

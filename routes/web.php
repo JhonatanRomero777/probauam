@@ -38,7 +38,7 @@ Route::get('/entities/index',function(){return view('pages/entities.index');})
 /*---------------------------------------- PROFESSIONALS ------------------------------------*/
 
 Route::get('/professionals/index',function(){return view('pages/professionals.index');})
-->middleware('can:professionals.index')->name('professionals.index');
+->middleware('auth')->middleware('can:professionals.index')->name('professionals.index');
 
 /*---------------------------------------- CONTRACTS ------------------------------------*/
 
@@ -49,7 +49,7 @@ Route::get('/contracts/index/{entity_id}',function($entity_id)
 /*---------------------------------------- PATIENTS -----------------------------------------*/
 
 Route::get('/patients/index',function(){return view('pages/patients.index');})
-->name('patients.index'); //->middleware('can:entities.index')
+->middleware('auth')->name('patients.index'); //->middleware('can:entities.index')
 
 /*---------------------------------------- SESIONS -----------------------------------------*/
 

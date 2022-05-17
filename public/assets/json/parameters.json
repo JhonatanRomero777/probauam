@@ -13,7 +13,7 @@
     },
     {
         "name":"Tipo de documento",
-        "options": ["Cédula","Cédula de Extranjería","Pasaporte"]
+        "options": ["Cédula","Cédula de Extranjería","Pasaporte","CURP"]
     },
     {
         "name":"Estrato Socioeconomico",

@@ -34,9 +34,9 @@
         <div class="col-md-6">
           <div class="card-border">
         
-            <div class="card-header text-center shadow-blue">
-              <h6>{{$current_entity->name}}</h6>
-            </div> 
+            <div class="card-header text-center shadow-blue" style="height: 60px">
+              <div style="height: 100%"> <h6>{{$current_entity->name}}</h6> </div>
+            </div>
 
             <div class="card-body shadow-orange">
               <div class="row">
@@ -88,6 +88,7 @@
 
       @endforeach
     </div>
+    
   @else
     <h6 style="text-align: center"><b>No existen entidades en {{$this->city->name}} </b></h6>
   @endif

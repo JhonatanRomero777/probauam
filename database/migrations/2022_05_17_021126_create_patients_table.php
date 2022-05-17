@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+            $table->foreignId('entity_id');
+            $table->foreignId('companion_id');
             $table->string('names',30);
             $table->string('last_names',30);
             $table->foreignId('document_type');
@@ -34,6 +36,12 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreign('entity_id')->references('id')->on('entities')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreign('companion_id')->references('id')->on('companions')
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->foreign('document_type')->references('id')->on('options')

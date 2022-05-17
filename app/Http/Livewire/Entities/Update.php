@@ -3,7 +3,6 @@
 namespace App\Http\Livewire\Entities;
 
 use App\Models\Country;
-use App\Models\City;
 use App\Models\Entity;
 
 use Livewire\Component;

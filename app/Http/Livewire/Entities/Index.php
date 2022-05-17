@@ -15,6 +15,8 @@ class Index extends Component
 
     protected $paginationTheme = 'bootstrap';
 
+    protected $listeners = ['delete' , 'changeCity' , 'render'];
+
     public function mount()
     {
         $this->city = Country::first()->departments->first()->cities->first();
@@ -22,7 +24,10 @@ class Index extends Component
         $this->resetPage();
     }
 
-    protected $listeners = ['delete' , 'changeCity' , 'render'];
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 
     public function changeCity(City $city)
     {
@@ -33,11 +38,6 @@ class Index extends Component
     public function delete(Entity $entity)
     {
         $entity->delete();
-    }
-
-    public function updatedSearch()
-    {
-        $this->resetPage();
     }
 
     public function render()

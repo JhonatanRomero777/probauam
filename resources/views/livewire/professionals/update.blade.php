@@ -15,14 +15,16 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <input class="form-control" wire:model="professional.names" placeholder="Nombres">
+              <label>{{__("Nombres")}}</label>
+              <input class="form-control" wire:model.lazy="professional.names">
               @error('professional.names') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="form-group">
-              <input class="form-control" wire:model="professional.last_names" placeholder="Apellidos">
+              <label>{{__("Apellidos")}}</label>
+              <input class="form-control" wire:model.lazy="professional.last_names">
               @error('professional.last_names') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
             </div>
           </div>
@@ -31,18 +33,21 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <select class="form-control" wire:change="changeTypeDocument($event.target.value)">
-                <option selected="selected" hidden>{{$document_type->name}}</option>
+              <label>{{__("Tipo de Documento")}}</label>
+              <select class="form-control" wire:model="professional.document_type">
+                <option value=""> Elige una opción </option>
                 @foreach ($documents as $current_document)
                   <option value="{{$current_document->id}}">{{$current_document->name}}</option>
                 @endforeach
               </select>
+              @error('professional.document_type') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="form-group">
-              <input class="form-control" wire:model="professional.document" placeholder="Documento">
+              <label>{{__("Documento")}}</label>
+              <input class="form-control" wire:model.lazy="professional.document">
               @error('professional.document') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
             </div>
           </div>
@@ -51,21 +56,24 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <input class="form-control" wire:model="professional.professional_card" placeholder="Tarjeta Profesional">
+              <label>{{__("Tarjeta Profesional")}}</label>
+              <input class="form-control" wire:model.lazy="professional.professional_card">
               @error('professional.professional_card') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="form-group">
-              <input class="form-control" wire:model="professional.phone" placeholder="Teléfono">
+              <label>{{__("Teléfono")}}</label>
+              <input class="form-control" wire:model.lazy="professional.phone">
               @error('professional.phone') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
             </div>
           </div>
         </div>
 
         <div class="form-group">
-          <input class="form-control" wire:model="user.email" placeholder="Email">
+          <label>{{__("Email")}}</label>
+          <input class="form-control" wire:model.lazy="user.email">
           @error('user.email') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
         </div>
 

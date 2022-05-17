@@ -11,9 +11,9 @@
   
   <div class="content">
 
-    @livewire('components.modal',["id_modal"=>'modal-entity-create' , "component"=>'entities.create'])
+    @livewire('components.modal',["id_modal"=>'modal-entity-create' , "percentage"=>'60%', "component"=>'entities.create'])
 
-    @livewire('components.modal',["id_modal"=>'modal-entity-update' , "component"=>'entities.update'])
+    @livewire('components.modal',["id_modal"=>'modal-entity-update' , "percentage"=>'60%', "component"=>'entities.update'])
 
     <div class="row">
       <div class="col-md-12">

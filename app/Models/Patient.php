@@ -11,6 +11,8 @@ class Patient extends Model
 
     protected $fillable = [
         'user_id',
+        'entity_id',
+        'companion_id',
         'names',
         'last_names',
         'document_type',
@@ -31,6 +33,21 @@ class Patient extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function Entity()
+    {
+        return $this->belongsTo(Entity::class);
+    }
+
+    public function companion()
+    {
+        return $this->belongsTo(Companion::class);
+    }
+
+    public function antecedents()
+    {
+        return $this->hasMany(Antecedent::class);
     }
 
     public function sesions()

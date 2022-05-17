@@ -114,18 +114,6 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script>
-    // window.addEventListener('success',() =>{
-    //   Swal.fire({
-    //     icon: 'success',
-    //     title: 'Acción Exitosa',
-    //     showConfirmButton: false,
-    //     timer: 1000,
-    //   })
-    // });
-
-    // window.addEventListener('send', event => {
-    //   Livewire.emitTo(event.detail.page,event.detail.function,event.detail.data);
-    // });
 
     Livewire.on('success',() =>{
       Swal.fire({

@@ -13,15 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sesions', function (Blueprint $table) {
+        Schema::create('antecedents', function (Blueprint $table) {
             $table->id();
             $table->foreignId('patient_id');
-            $table->boolean('finish');
+            $table->foreignId('illness_id');
             $table->timestamps();
 
             $table->foreign('patient_id')->references('id')->on('patients')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreign('illness_id')->references('id')->on('illnesses')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 
@@ -32,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sesions');
+        Schema::dropIfExists('antecedents');
     }
 };

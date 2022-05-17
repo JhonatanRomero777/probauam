@@ -20,12 +20,12 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('entity_id')->references('id')->on('entities')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
 
             $table->foreign('professional_id')->references('id')->on('professionals')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

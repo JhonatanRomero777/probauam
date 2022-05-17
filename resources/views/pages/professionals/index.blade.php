@@ -11,14 +11,14 @@
 
   <div class="content">
 
-    @livewire('components.modal',["id_modal"=>'modal-professional-create' , "component"=>'professionals.create'])
+    @livewire('components.modal',["id_modal"=>'modal-professional-create' , "percentage"=>'60%', "component"=>'professionals.create'])
 
-    @livewire('components.modal',["id_modal"=>'modal-professional-update' , "component"=>'professionals.update'])
+    @livewire('components.modal',["id_modal"=>'modal-professional-update' , "percentage"=>'60%', "component"=>'professionals.update'])
 
     <div class="row">
       <div class="col-md-12">
 
-        @livewire('entities.index')
+        @livewire('professionals.index')
 
       </div>
     </div>

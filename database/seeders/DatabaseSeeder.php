@@ -23,6 +23,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call(EntitySeeder::class);
 
-        $this->call(FormSeeder::class);
+        $this->call(ProfessionalSeeder::class);
+
+        $this->call(IllnessSeeder::class);
+
+        // $this->call(FormSeeder::class);
     }
 }
