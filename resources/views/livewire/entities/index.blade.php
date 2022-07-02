@@ -3,6 +3,7 @@
   <div class="card">
 
     <div class="card-body">
+      
       <div class="row">
         <div class="col-md-6"> 
           <div class="input-group" style="padding-top: 10px">
@@ -70,16 +71,24 @@
             </div>
 
             <div class="card-footer text-center shadow-blue">
-              <a href="{{route('contracts.index',['entity_id'=>$current_entity])}}" class="btn btn-success btn-round">
-                REGISTRO <i class="fas fa-briefcase-medical fa-lg"></i>
+              <a href="{{ route('patients.index',['entity_id'=>$current_entity]) }}" class="btn btn-info btn-round">
+                <i class="fas fa-user fa-lg"></i>
+              </a>
+
+              <a href="{{ route('contracts.index',['entity_id'=>$current_entity]) }}" class="btn btn-success btn-round" disabled>
+                <i class="fas fa-briefcase-medical fa-lg"></i>
+              </a>
+
+              <a href="" class="btn btn-primary btn-round">
+                <i class="bi bi-graph-up-arrow fa-lg"></i>
               </a>
 
               <button wire:click="$emitTo('entities.update','update',{{$current_entity}})" class="btn btn-warning btn-round">
-                EDITAR <i class="bi bi-pencil-square fa-lg"></i>
+                <i class="bi bi-pencil-square fa-lg"></i>
               </button>
 
               <button wire:click="$emit('remove',['entities.index',{{$current_entity}}])" class="btn btn-danger btn-round">
-                BORRAR <i class="bi bi-trash fa-lg"></i>
+                <i class="bi bi-trash fa-lg"></i>
               </button>
             </div>
             

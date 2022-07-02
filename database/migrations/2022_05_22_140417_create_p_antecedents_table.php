@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('antecedents', function (Blueprint $table) {
+        Schema::create('p_antecedents', function (Blueprint $table) {
             $table->id();
             $table->foreignId('patient_id');
-            $table->foreignId('illness_id');
+            $table->foreignId('illness_id')->nullable();
             $table->timestamps();
 
             $table->foreign('patient_id')->references('id')->on('patients')
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('antecedents');
+        Schema::dropIfExists('p_antecedents');
     }
 };

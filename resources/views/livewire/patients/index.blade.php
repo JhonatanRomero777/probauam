@@ -4,12 +4,18 @@
 
     <div class="card-body">
       <div class="row">
+        <div class="col-md-12">
+          <h3> <b>ENTIDAD :</b> {{$this->entity->name}}</h3>
+        </div>
+      </div>
+
+      <div class="row">
 
         <div class="col-md-6">
 
           <div class="row">
             <div class="col-md-9">
-              <div class="input-group" style="padding-top: 10px">
+              <div class="input-group" style="padding-top: 8px">
                 <input class="form-control" wire:model="search" style="text-align:center;font-size:15px" placeholder="Buscar por Documento">
                 <div class="input-group-append">
                   <div class="input-group-text">
@@ -17,10 +23,12 @@
                   </div>
                 </div>
               </div>
+              @error('patient.exist') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
             </div>
 
+            {{-- $emitTo('patients.create','init') --}}
             <div class="col-md-3">
-              <button class="btn btn-primary btn-round" wire:click="$emitTo('patients.create','create')">
+              <button wire:click="verify()" class="btn btn-primary btn-round">
                 CREAR <i class="bi bi-plus-circle fa-lg"></i>
               </button>
             </div>
@@ -85,7 +93,7 @@
             </div>
 
             <div class="card-footer text-center shadow-blue">
-              <button wire:click="$emitTo('patients.update','update',{{$current_patient}})" class="btn btn-warning btn-round">
+              <button wire:click="$emitTo('patients.create','init',{{$current_patient->id}})" class="btn btn-warning btn-round">
                 EDITAR <i class="bi bi-pencil-square fa-lg"></i>
               </button>
 

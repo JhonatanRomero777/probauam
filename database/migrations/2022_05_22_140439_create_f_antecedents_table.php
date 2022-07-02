@@ -13,16 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('entities', function (Blueprint $table) {
+        Schema::create('f_antecedents', function (Blueprint $table) {
             $table->id();
-            $table->string('name',60);
-            $table->string('direction',60);
-            $table->string('nit',10)->unique();
-            $table->string('phone',20);
-            $table->foreignId('city_id');
+            $table->foreignId('patient_id');
+            $table->foreignId('pharmacological_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('city_id')->references('id')->on('cities')
+            $table->foreign('patient_id')->references('id')->on('patients')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreign('pharmacological_id')->references('id')->on('options')
             ->onUpdate('cascade')
             ->onDelete('cascade');
         });
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('entities');
+        Schema::dropIfExists('f_antecedents');
     }
 };

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('entity_id');
-            $table->foreignId('companion_id');
+            $table->foreignId('companion_id')->nullable();
             $table->string('names',30);
             $table->string('last_names',30);
             $table->foreignId('document_type');

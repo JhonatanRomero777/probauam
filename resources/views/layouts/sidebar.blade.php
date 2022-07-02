@@ -3,7 +3,7 @@
     Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
 -->
   <div class="logo">
-    <img src="{{asset('assets')}}/img/logo.png" width="100%" height="100%">
+    <img src="{{asset('assets')}}/img/logouam.png" width="100%" height="100%">
   </div>
 
   <div class="sidebar-wrapper" id="sidebar-wrapper">
@@ -69,13 +69,6 @@
           </ul>
         </div>
       </li> --}}
-
-      <li class = "@if ($activePage == 'patients') active @endif">
-        <a href="{{ route('patients.index') }}">
-          <i class="now-ui-icons shopping_shop"></i>
-          <p>{{ __('Usuarios') }}</p>
-        </a>
-      </li>
 
       <li class="@if ($activePage == 'icons') active @endif">
         <a href="{{ route('pages.icons','icons') }}">

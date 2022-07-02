@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Patient;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -25,6 +26,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(ProfessionalSeeder::class);
 
+        Patient::factory(50)->create();
+        
         $this->call(IllnessSeeder::class);
 
         // $this->call(FormSeeder::class);

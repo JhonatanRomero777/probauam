@@ -18,7 +18,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-5">
-                <img src="{{asset('assets')}}/img/logo.png" width="100%" height="100%">
+                <img src="{{asset('assets')}}/img/logouam.png" width="100%" height="100%">
               </div>
               <div class="col-md-6">
                 @livewire('users.login')

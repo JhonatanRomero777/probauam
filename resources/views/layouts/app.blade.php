@@ -115,12 +115,20 @@
 
   <script>
 
-    Livewire.on('success',() =>{
+    Livewire.on('success',() => {
       Swal.fire({
         icon: 'success',
         title: 'Acción Exitosa',
         showConfirmButton: false,
         timer: 1000,
+      })
+    });
+
+    Livewire.on('warning',msg => {
+      Swal.fire({
+        icon: 'warning',
+        title: msg,
+        showConfirmButton: true,
       })
     });
 

@@ -17,7 +17,12 @@
 
     <div class="row">
       <div class="col-md-12">
-        @livewire('entities.search')
+
+        <div class="card">
+          <div class="card-body">
+            @livewire('entities.search')
+          </div>
+        </div>
 
         @livewire('entities.index')
       </div>

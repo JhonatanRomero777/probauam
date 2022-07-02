@@ -45,9 +45,14 @@ class Patient extends Model
         return $this->belongsTo(Companion::class);
     }
 
-    public function antecedents()
+    public function p_antecedents()
     {
-        return $this->hasMany(Antecedent::class);
+        return $this->hasMany(PAntecedent::class);
+    }
+
+    public function f_antecedents()
+    {
+        return $this->hasMany(FAntecedent::class);
     }
 
     public function sesions()

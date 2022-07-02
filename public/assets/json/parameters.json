@@ -16,11 +16,19 @@
         "options": ["Cédula","Cédula de Extranjería","Pasaporte","CURP"]
     },
     {
-        "name":"Estrato Socioeconomico",
+        "name":"Parentezco Familiar",
+        "options": ["Cónyuge","Hermano/a","Hijo/a","Nieto/a","Sobrino/a"]
+    },
+    {
+        "name":"Estrato Socioeconómico",
         "options": ["1","2","3","4","5","6"]
     },
     {
         "name":"Regimen de seguridad social",
-        "options": ["Contributivo","Subsidiado","Vinculado","Especial","ISSTE","IMSS","Otro","Ninguno"]
+        "options": ["Contributivo","Subsidiado","Vinculado","Especial","ISSTE","IMSS","Ninguno"]
+    },
+    {
+        "name":"Antecedentes Farmacológicos",
+        "options": ["Analgésicos","Insulina","Antiagregantes plaquetarios","Antidepresivos","Antirreumáticos","AINES","Relajante Muscular","Antihipertensivos","Anticonvulsivos","Protector gástrico","Inmunosupresor","Hormona Tiroidea","Estatinas","Antiparkinsonianos"]
     }
 ]

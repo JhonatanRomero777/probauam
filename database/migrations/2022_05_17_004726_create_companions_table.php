@@ -17,12 +17,17 @@ return new class extends Migration
             $table->id();
             $table->string('names',30);
             $table->string('last_names',30);
+            $table->foreignId('document_type')->nullable();
+            $table->string('document',20);
             $table->string('phone',20);
-            $table->string('cellphone',20);
+            $table->string('phone2',20);
             $table->string('direction',60);
             $table->foreignId('relationship')->nullable();
             $table->timestamps();
 
+            $table->foreign('document_type')->references('id')->on('options')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->foreign('relationship')->references('id')->on('options')
             ->onUpdate('cascade')
             ->onDelete('cascade');

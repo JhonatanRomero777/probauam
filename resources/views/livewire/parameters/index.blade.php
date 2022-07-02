@@ -88,7 +88,7 @@
           <div class="card-body">
               
             @foreach ($parameters as $current_parameter)
-              <div class="form-group" style="text-align:center">  
+              <div class="text-center">  
                 <button class="btn btn-primary btn-lg" wire:click="changeParameter({{$current_parameter}})">
                   <i class="bi bi-list-ul"></i> {{$current_parameter->name}}
                 </button>

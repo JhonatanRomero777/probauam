@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Patients;
 
-use App\Models\Companion;
+use App\Models\Entity;
 use App\Models\Option;
 use App\Models\Patient;
 use App\Models\User;
@@ -60,7 +60,7 @@ class Update extends Component
         'patient.social_security_scheme.required' => 'El campo es obligatorio',
     ];
 
-    protected $listeners = ['update'];
+    protected $listeners = ['init'];
 
     public String $age;
     public String $imc;
@@ -70,6 +70,7 @@ class Update extends Component
     {
         $this->patient = new Patient;
         $this->user = new User;
+        $this->entity = new Entity;
 
         $this->all_document_type = Option::where('parameter_id', 4)->get();
         $this->all_sex = Option::where('parameter_id', 1)->get();
@@ -81,15 +82,28 @@ class Update extends Component
 
         $this->all_civil_status = Option::where('parameter_id', 2)->get();
         $this->all_education_level = Option::where('parameter_id', 3)->get();
-        $this->all_socioeconomic_stratum = Option::where('parameter_id', 5)->get();
-        $this->all_social_security_scheme = Option::where('parameter_id', 6)->get();
+        $this->all_socioeconomic_stratum = Option::where('parameter_id', 6)->get();
+        $this->all_social_security_scheme = Option::where('parameter_id', 7)->get();
 
         $this->all_height = array(); for ($i=120; $i<=255; $i++){ array_push($this->all_height , $i.""); }
         $this->all_weight = array(); for ($i= 40; $i<=255; $i++){ array_push($this->all_weight , $i.""); }
         $this->all_size   = array(); for ($i= 50; $i<=150; $i++){ array_push($this->all_size   , $i.""); }
 
-        $this->bandera = true;
         $this->current_email = "";
+    }
+
+    public function init(Entity $entity , Patient $patient)
+    {
+        $this->patient = $patient;
+        $this->user   = $patient->user;
+        $this->current_email = $this->user->email;
+        $this->entity = $entity;
+
+        $this->updatedPatientBirthday();
+        $this->changeIMC();
+
+        $this->resetValidation();
+        $this->emit('open-modal','#modal-patient-update');
     }
 
     public function updatedPatientNames()
@@ -227,45 +241,43 @@ class Update extends Component
         $this->validateOnly('patient.social_security_scheme');
     }
 
-    public function update(Patient $patient)
+    public function save()
     {
-        $this->patient = $patient;
-        $this->user   = $patient->user;
+        $this->validate();
 
-        $limit_date = Carbon::now()->toArray();
-        $limit_date = ($limit_date['year'] - 61).'-12-31';
-        $this->updatedPatientBirthday();
-        $this->changeIMC();
+        if(Patient::where('document','=',$this->patient->document)->where('id','!=',$this->patient->id)->get()->count())
+        { $this->addError('patient.document', 'Documento ya registrado'); return false; }
 
-        $this->resetValidation();
-        $this->emit('open-modal','#modal-patient-update');
+        if(User::where('email','=',$this->user->email)->where('id','!=',$this->user->id)->get()->count())
+        { $this->addError('user.email', 'Email ya registrado'); return false; }
+
+        if($this->user->email != $this->current_email)
+        {
+            $this->user->save();
+            //mandar correo cambio de contraseña
+        }
+
+        $this->patient->entity_id = $this->entity->id;
+        $this->patient->save();
+        $this->emitTo('patients.index','render');
+        $this->emit('close-modal','#modal-patient-update');
+        $this->emit('success');
+        return true;
     }
 
     public function next()
     {
-        $this->validate();
-
-        $this->bandera = true;
-
-        if(Patient::where('document','=',$this->patient->document)->where('id','!=',$this->patient->id)->get()->count())
-        { $this->addError('patient.document', 'Documento ya registrado'); $this->bandera = false; }
-
-        if(User::where('email','=',$this->user->email)->where('id','!=',$this->user->id)->get()->count())
-        { $this->addError('user.email', 'Email ya registrado'); $this->bandera = false; }
-
-        if($this->bandera)
+        if($this->save())
         {
-            if($this->user->email != $this->current_email)
-            {
-                $this->user->save();
-                //mandar correo cambio de contraseña
-            }
+            $this->emitTo('patients.antecedents','init',$this->patient->id);
+        }
+    }
 
-            $this->patient->save();
-            $this->emitTo('patients.index','render');
-            $this->emit('close-modal','#modal-patient-update');
-            $this->emitTo('patients.create2','create',$this->patient);
-            $this->emit('success');
+    public function back()
+    {
+        if($this->save())
+        {
+            $this->emitTo('patients.create','init',$this->patient->id);
         }
     }
 

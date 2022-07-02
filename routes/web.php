@@ -48,8 +48,9 @@ Route::get('/contracts/index/{entity_id}',function($entity_id)
 
 /*---------------------------------------- PATIENTS -----------------------------------------*/
 
-Route::get('/patients/index',function(){return view('pages/patients.index');})
-->middleware('auth')->name('patients.index'); //->middleware('can:entities.index')
+Route::get('/patients/index/{entity_id}',function($entity_id)
+{return view('pages/patients.index',['entity_id'=>$entity_id]);})
+->middleware('auth')->name('patients.index');//->middleware('can:entities.index')
 
 /*---------------------------------------- SESIONS -----------------------------------------*/
 

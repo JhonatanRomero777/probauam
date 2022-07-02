@@ -1,243 +1,154 @@
 <div>
 
   <div class="modal-header shadow-blue">
-    <h1 class="modal-title w-100 text-center"> DATOS GENERALES </h1>
+    <h1 class="modal-title w-100 text-center"> ENTIDADES </h1>
   </div>
 
   <div class="modal-body">
 
     <div class="row">
-  
-      {{-- PRIMERA PARTE --}}
-        <div class="col-md-5">
-    
-          <div class="row">
-            <div class="col-md-6">         
-              <div class="form-group">
-                <label>{{__("Nombres")}}</label>
-                <input class="form-control" wire:model.lazy="patient.names">
-                @error('patient.names') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>  
-            </div>
-
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>{{__("Apellidos")}}</label>
-                <input class="form-control" wire:model.lazy="patient.last_names">
-                @error('patient.last_names') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>  
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>{{__("Tipo de Documento")}}</label>
-                <select class="form-control" wire:model="patient.document_type">
-                  <option value=""> Elige una opción </option>
-                  @foreach ($all_document_type as $current_document_type)
-                    <option value="{{$current_document_type->id}}">{{$current_document_type->name}}</option>
-                  @endforeach
-                </select>
-                @error('patient.document_type') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>
-            </div>
-          
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>{{__("Documento")}}</label>
-                <input class="form-control" wire:model.lazy="patient.document">
-                @error('patient.document') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>  
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>{{__("Sexo")}}</label>
-                <select class="form-control" wire:model="patient.sex">
-                  <option value=""> Elige una opción </option>
-                  @foreach ($all_sex as $current_sex)
-                    <option value="{{$current_sex->id}}">{{$current_sex->name}}</option>
-                  @endforeach
-                </select>
-                @error('patient.sex') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>{{__("Teléfono")}}</label>
-                <input class="form-control" wire:model.lazy="patient.phone">
-                @error('patient.phone') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>  
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label>{{__("Email")}}</label>
-                <input class="form-control" wire:model.lazy='user.email'>
-                @error('user.email') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>  
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label>{{__("Dirección")}}</label>
-                <input class="form-control" wire:model.lazy="patient.direction">
-                @error('patient.direction') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>  
-            </div>
-          </div>
-
+      <div class="col-md-2" style="margin-top: 12px">
+        <div class="form-group">
+          <select class="form-control" wire:change="changeCountry($event.target.value)">
+            <option selected="selected" hidden>{{$country->name}}</option>
+            @foreach (App\Models\Country::all() as $current_country)
+              <option value="{{$current_country->id}}">{{$current_country->name}}</option>
+            @endforeach
+          </select>  
         </div>
-      {{--/ PRIMERA PARTE /--}}
-
+      </div>
+                
+      <div class="col-md-2">          
+        <div class="form-group" style="margin-top: 12px">
+          <select class="form-control" wire:change="changeDepartment($event.target.value)">
+            <option selected="selected" hidden>{{$department->name}}</option>
+            @foreach ($country->departments()->getResults() as $current_department)
+              <option value="{{$current_department->id}}">{{$current_department->name}}</option>
+            @endforeach
+          </select>
+        </div>
+      </div>
+                
       <div class="col-md-2">
+        <div class="form-group" style="margin-top: 12px">
+          <select class="form-control" wire:change="changeCity($event.target.value)">
+            <option selected="selected" hidden>{{$city->name}}</option>
+            @foreach ($department->cities()->getResults() as $current_city)
+              <option value="{{$current_city->id}}">{{$current_city->name}}</option>
+            @endforeach
+          </select>
+        </div>
+      </div>
   
-        @if($patient->sex == 1)
-          <img src="{{asset('assets')}}/img/abuelito.jpg" height="50%">
-        @elseif ($patient->sex == 2)
-          <img src="{{asset('assets')}}/img/abuelita.jpg" height="50%">
-        @else
-          <img src="{{asset('assets')}}/img/sinperfil.jpg" height="50%">
-        @endif
+      <div class="col-md-6">
+        <div class="input-group" style="padding-top: 10px">
+          <input class="form-control" wire:model="search" style="text-align:center;font-size:15px" placeholder="Buscar por Nombre">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <i class="bi bi-search fa-lg" style="color:black"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-6">
+
+        @if ($entity->id)
+          <div style="height: 375px">
+            
+            <div class="card-border">
         
+              <div class="card-header text-center shadow-blue" style="height: 60px">
+                <div style="height: 100%"> <h6>{{$entity->name}}</h6> </div>
+              </div>
+  
+              <div class="card-body shadow-orange">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+  
+                      <p><b>NIT:</b></p>
+                      <p> {{$entity->nit}} </p>
+                      <hr style="background: white; height: 1px">
+  
+                    </div>
+                  </div>
+  
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      
+                      <p><b>Teléfono:</b></p>
+                      <p> {{$entity->phone}} </p>
+                      <hr style="background: white; height: 1px">
+                      
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="form-group">
+                  <p><b>{{__("Dirección:")}}</b></p>
+                  <p> {{$entity->direction}} </p>
+                  
+                  <hr style="background: white; height: 1px">
+                </div>
+              </div>
+  
+              <div class="card-footer text-center shadow-blue">
+                <div class="card-header text-center shadow-blue" style="height: 30px">
+                  <div style="height: 100%">  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+          </div>
+        @else
+          <div style="height: 375px">
+            <h6 style="text-align: center; padding-top: 20px"><b> SELECCIONE ENTIDAD </b></h6>
+          </div>
+        @endif
+
       </div>
 
-      {{-- SEGUNDA PARTE --}}
-        <div class="col-md-5">
+      <div class="col-md-6" style="padding-top: 12px">
 
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>{{__("Fecha de Nacimiento")}}</label>
-                <input type="date" class="form-control" wire:model="patient.birthday" max="{{$limit_date}}">
-                @error('patient.birthday') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>{{__("Edad")}}</label>
-                <input class="form-control" placeholder="{{$age}}" readonly="readonly">
-              </div>  
-            </div>
-          </div>
-        
-          <div class="row">
-            <div class="col-md-4">
-              <div class="form-group">
-                <label>{{__("Estatura")}}</label>
-                <select class="form-control" wire:model="patient.height">
-                  <option value=""> Elige una opción </option>
-                  @foreach ($all_height as $current_height)
-                    <option value="{{$current_height}}">{{$current_height}} cm</option>
-                  @endforeach
-                </select>
-                @error('patient.height') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label>{{__("Peso")}}</label>
-                <select class="form-control" wire:model="patient.weight">
-                  <option value=""> Elige una opción </option>
-                  @foreach ($all_weight as $current_weight)
-                    <option value="{{$current_weight}}">{{$current_weight}} kg</option>
-                  @endforeach
-                </select>
-                @error('patient.weight') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>  
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label>{{__("Perímetro de la cintura")}}</label>
-                <select class="form-control" wire:model="patient.size">
-                  <option value=""> Elige una opción </option>
-                  @foreach ($all_size as $current_size)
-                    <option value="{{$current_size}}">{{$current_size}} cm</option>
-                  @endforeach
-                </select>
-                @error('patient.size') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>
-            </div>
-          </div>
-        
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>{{__("IMC")}}</label>
-                <input class="form-control" placeholder="{{$imc}}" readonly="readonly">
-              </div>  
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>{{__("Categoría")}}</label>  
-                <input class="form-control" placeholder="{{$category}}" readonly="readonly">
-              </div>  
-            </div>
-          </div>
-        
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>{{__("Estado Civil")}}</label>
-                <select class="form-control" wire:model="patient.civil_status">
-                  <option value=""> Elige una opción </option>
-                  @foreach ($all_civil_status as $current_civil_status)
-                    <option value="{{$current_civil_status->id}}">{{$current_civil_status->name}}</option>
-                  @endforeach
-                </select>
-                @error('patient.civil_status') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>{{__("Nivel de educación")}}</label>
-                <select class="form-control" wire:model="patient.education_level">
-                  <option value=""> Elige una opción </option>
-                  @foreach ($all_education_level as $current_education_level)
-                    <option value="{{$current_education_level->id}}">{{$current_education_level->name}}</option>
-                  @endforeach
-                </select>
-                @error('patient.education_level') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>  
-            </div>
-          </div>
-        
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>{{__("Estrato Socioeconómico")}}</label>
-                <select class="form-control" wire:model="patient.socioeconomic_stratum">
-                  <option value=""> Elige una opción </option>
-                  @foreach ($all_socioeconomic_stratum as $current_socioeconomic_stratum)
-                    <option value="{{$current_socioeconomic_stratum->id}}">{{$current_socioeconomic_stratum->name}}</option>
-                  @endforeach
-                </select>
-                @error('patient.socioeconomic_stratum') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>{{__("Régimen de Seguridad Social")}}</label>
-                <select class="form-control" wire:model="patient.social_security_scheme">
-                  <option value=""> Elige una opción </option>
-                  @foreach ($all_social_security_scheme as $current_social_security_scheme)
-                    <option value="{{$current_social_security_scheme->id}}">{{$current_social_security_scheme->name}}</option>
-                  @endforeach
-                </select>
-                @error('patient.social_security_scheme') <small class="text-primary"> <b>*{{$message}}</b></small> @enderror
-              </div>  
-            </div>
-          </div>
+        @if ($entities->hasPages())
+          {{$entities->links()}}
+        @endif
 
-        </div>
-      {{--/ SEGUNDA PARTE /--}}
+        @if ($entities->count())
+
+          <table class="table text-center table-striped table-bordered">
+            <thead class = "text-primary">
+              <tr>
+                <th><b> NIT </b></th>
+                <th><b> Nombre </b></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach ($entities as $current_entity)
+                <tr>
+                  <td style="width: 20%"> {{$current_entity->nit}} </td>
+                  <td style="width: 70%"> {{$current_entity->name}} </td>
+                  <td style="width: 10%">
+                    <button wire:click="changeEntity({{$current_entity}})" class="btn btn-warning btn-round">
+                    <i class="bi bi-pencil-square fa-lg"></i>
+                    </button>
+                  </td>
+                </tr>
+              @endforeach
+            </tbody>
+          </table>
+            
+        @else
+          <h6 style="text-align: center; padding-top: 12px"><b>No existen entidades en {{$this->city->name}} </b></h6>
+        @endif
+
+      </div>
 
     </div>
 
@@ -253,11 +164,19 @@
             <span class="step finish"></span>
             <span class="step"></span>
             <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
           </div>
         
-          <button wire:click="next()" class="btn btn-primary btn-round">
-            <i class="bi bi-arrow-right-square fa-2x"></i>
-          </button>
+          @if ($patient->id)
+            <button wire:click="next()" class="btn btn-primary btn-round" @if(!$entity->id) disabled @endif>
+              <i class="bi bi-arrow-right-square fa-2x"></i>
+            </button>
+          @else
+            <button wire:click="$emitTo('patients.create2','init',{{$entity->id}})" class="btn btn-primary btn-round" @if(!$entity->id) disabled @endif>
+              <i class="bi bi-arrow-right-square fa-2x"></i>
+            </button>
+          @endif
         
           <button wire:click="$emit('close-modal','#modal-patient-create')" class="btn btn-light btn-round">
             CANCELAR <i class="bi bi-x-circle fa-lg"></i>

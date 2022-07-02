@@ -1,7 +1,7 @@
 <div>
 
   <div class="modal-header shadow-blue">
-    <h1 class="modal-title w-100 text-center"> DATOS GENERALES </h1>
+    <h2 class="modal-title w-100 text-center"> {{$entity->name}} </h2>
   </div>
 
   <div class="modal-body">
@@ -245,12 +245,14 @@
       <div class="col-md-6" style="margin-left: 25%">
 
         <div class="modal_botones">
-          <button class="btn btn-primary btn-round" disabled>
+          <button wire:click="back()" class="btn btn-primary btn-round">
             <i class="bi bi-arrow-left-square fa-2x"></i>
           </button>
         
           <div style="text-align:center; margin-top:25px;">
+            <span class="step"></span>
             <span class="step finish"></span>
+            <span class="step"></span>
             <span class="step"></span>
             <span class="step"></span>
           </div>
