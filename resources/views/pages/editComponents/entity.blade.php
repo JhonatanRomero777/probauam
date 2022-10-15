@@ -1,0 +1,1 @@
+<h5 class="card-title" style="text-align: center"><b> ENTIDAD </b></h5>

@@ -12,7 +12,7 @@
 
     @livewire('components.modal',["id_modal"=>'modal-patient-create', "percentage"=>'98%', "component"=>'patients.create'])
 
-    @livewire('components.modal',["id_modal"=>'modal-patient-update', "percentage"=>'98%', "component"=>'patients.update'])
+    @livewire('components.modal',["id_modal"=>'modal-patient-update', "percentage"=>'98%', "component"=>'patients.edit'])
 
     @livewire('components.modal',["id_modal"=>'modal-patient-create2', "percentage"=>'98%', "component"=>'patients.create2'])
 

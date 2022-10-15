@@ -10,7 +10,6 @@
       </div>
 
       <div class="row">
-
         <div class="col-md-6">
 
           <div class="row">
@@ -41,7 +40,6 @@
             {{$patients->links()}}
           @endif
         </div>
-
       </div>
 
     </div>
@@ -64,38 +62,41 @@
             <div class="card-body shadow-orange">
 
               <div class="row">
-                <div class="col-md-6">
-                  @if ($current_patient->sex == 1)
-                    <img src="{{asset('assets')}}/img/abuelito.jpg">
-                  @elseif ($current_patient->sex == 2)
-                    <img src="{{asset('assets')}}/img/abuelita.jpg">
-                  @else
-                    <img src="{{asset('assets')}}/img/sinperfil.jpg">
-                  @endif
-                </div>
 
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label><b>{{__("Tipo de Documento:")}}</b></label>
-                    <p> {{App\Models\Option::find($current_patient->document_type)->name}} </p>
-                    <hr style="background: white; height: 1px">
+                  <div class="col-md-5">
+                    @if ($current_patient->sex == 1)
+                      <img class="rounded-circle" src="{{asset('assets')}}/img/abuelito.jpg" width="100%" height="100%">
+                    @elseif ($current_patient->sex == 2)
+                      <img class="rounded-circle" src="{{asset('assets')}}/img/abuelita.jpg" width="100%" height="100%">
+                    @else
+                      <img class="rounded-circle" src="{{asset('assets')}}/img/sinperfil.jpg" width="100%" height="100%">
+                    @endif
                   </div>
 
-                  <div class="form-group">
-                    <label><b>{{__("Documento:")}}</b></label>
-                    <p> {{$current_patient->document}} </p>
-                    <hr style="background: white; height: 1px">
-                  </div>
-                </div>
+                  <div class="col-md-7">
 
-                
+                    <div class="form-group">
+                      <label><b>{{__("Tipo de Documento")}}</b></label>
+                      <p> {{App\Models\Option::find($current_patient->document_type)->name}} </p>
+                      <hr style="background: white; height: 1px">
+                    </div>
+
+                    <div class="form-group">
+                      <label><b>{{App\Models\Option::find($current_patient->document_type)->name}}</b></label>
+                      <p> {{$current_patient->document}} </p>
+                      <hr style="background: white; height: 1px">
+                    </div>
+
+                  </div>
+
               </div>
+
             </div>
 
             <div class="card-footer text-center shadow-blue">
-              <button wire:click="$emitTo('patients.create','init',{{$current_patient->id}})" class="btn btn-warning btn-round">
-                EDITAR <i class="bi bi-pencil-square fa-lg"></i>
-              </button>
+              <a href="{{ route('patients.update',['patient_id'=>$current_patient])}}" class="btn btn-warning btn-round">
+                <i class="bi bi-pencil-square fa-2x"></i>
+              </a>
 
               <a href="{{route('sesions.index',['patient_id'=>$current_patient])}}" class="btn btn-info btn-round">
                 <i class="bi bi-clipboard-plus fa-2x"></i>

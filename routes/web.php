@@ -52,6 +52,10 @@ Route::get('/patients/index/{entity_id}',function($entity_id)
 {return view('pages/patients.index',['entity_id'=>$entity_id]);})
 ->middleware('auth')->name('patients.index');//->middleware('can:entities.index')
 
+Route::get('/patients/update/{patient_id}',function($patient_id)
+{return view('pages/patients.update',['patient_id'=>$patient_id]);})
+->middleware('auth')->name('patients.update');//->middleware('can:entities.index')
+
 /*---------------------------------------- SESIONS -----------------------------------------*/
 
 Route::get('/sesions/index/{patient_id}',function($patient_id)
